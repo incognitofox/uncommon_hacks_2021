@@ -3,10 +3,14 @@
 ## Installation
 ### Dependencies
 This project uses the python `requests` library, which can be installed with:
-```pip install requests```
+```
+pip install requests
+```
 
 This project also uses ```youtube-dl```, which can be installed using:
-```brew youtube-dl```
+```
+brew install youtube-dl
+```
 
 ## Usage
 Store audd API key in a file called `keys.py` as a variable named  `audd_key`.
