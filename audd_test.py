@@ -36,18 +36,22 @@ def url_to_audio (url):
     if "youtube" not in url:
         print ("This is not a youtube video")
         os.system ("rm -rf noise*")
-        return
+        return False
     url_to_mp3(url)
     title, artist = get_audio_info ("noise.mp3.mp3", file = True)
     if (title == None and artist == None):
         print ("This is not a song")
         os.system ("rm -rf noise*")
-        return
+        return False
     is_rick = (title == "Never Gonna Give You Up" and artist == "Rick Astley")
     if is_rick:
         print ("Ha! Get pranked! You've been Ricked Rolled")
+        os.system ("rm -rf noise*")
+        return True
     else:
         print ("This is actually " + title + " by " + artist)
+        os.system ("rm -rf noise*")
+        return False
     os.system ("rm -rf noise*")
 
 url_to_audio(sys.argv[1])
