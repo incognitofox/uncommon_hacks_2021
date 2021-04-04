@@ -13,7 +13,7 @@ def rr_check():
     url = request.form['url']
     is_rr = audd_test.url_to_audio(url)
     if is_rr:
-        return render_template('index.html', text='You would have been Rick Rolled. It\'s OK. We saved you. You\'re welcome.')
+        return render_template('index.html', text='You would have been rickrolled. It\'s OK. We saved you. You\'re welcome.')
     else:
         return render_template('index.html', text='You lucked out this time.')
 if __name__ == '__main__':

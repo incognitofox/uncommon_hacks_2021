@@ -5,7 +5,7 @@ import sys
 import os
 
 def url_to_mp3 (url):
-    os.system("youtube-dl --extract-audio --audio-format mp3 --output \"noise.mp3\" " + url + " -k")
+    os.system("youtube-dl --extract-audio --audio-format mp3 --output \"noise.%(ext)s\" " + url + " -k")
 
 def get_audio_info(directory, file = False, url = False):
     result = None
@@ -38,14 +38,14 @@ def url_to_audio (url):
         os.system ("rm -rf noise*")
         return False
     url_to_mp3(url)
-    title, artist = get_audio_info ("noise.mp3.mp3", file = True)
+    title, artist = get_audio_info ("noise.mp3", file = True)
     if (title == None and artist == None):
         print ("This is not a song")
         os.system ("rm -rf noise*")
         return False
     is_rick = (title == "Never Gonna Give You Up" and artist == "Rick Astley")
     if is_rick:
-        print ("Ha! Get pranked! You've been Ricked Rolled")
+        print ("Ha! Get pranked! You've been rickrolled.")
         os.system ("rm -rf noise*")
         return True
     else:
@@ -53,4 +53,6 @@ def url_to_audio (url):
         os.system ("rm -rf noise*")
         return False
     os.system ("rm -rf noise*")
+
+
 

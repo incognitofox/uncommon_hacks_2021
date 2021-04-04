@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
-        <title>Is This A Rick Roll</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='home.css') }}/>
+        <title>Home</title>
     </head>
     <body>
-        <h1> Is this a Rick Roll? </h1>
+        <header>
+            <h1 id="header"> Are you being rickrolled? Come find out! </h1>
+        </header>        
+        <h1 id="heading"> Is this a Rick Roll? </h1>
         <form action='/rr_check' method="post">
-            <label for="url">Enter a URL:</label><br>
-            <input type="text" id="url" name="url"><br>
-            <input type="submit" value="Submit">
+            <label id='urltext' for="url">Enter a URL:</label><br>
+            <input id='url' type="text" id="url" name="url"><br>
+            <input id='button' type="submit" value="Submit">
         </form>
-        <p>{{text}}</p>
+        <p id='text'>{{text}}</p>
+        <img src="static/rickroll.gif" width="220" height="391"></img>
     </body>
 </html>
 
