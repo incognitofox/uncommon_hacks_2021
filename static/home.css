@@ -65,3 +65,7 @@ form {
     color:rgb(55, 121, 112);
     font-size: 25px;
 }
+
+#img {
+    padding: 20px;
+}
