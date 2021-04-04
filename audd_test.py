@@ -54,4 +54,3 @@ def url_to_audio (url):
         return False
     os.system ("rm -rf noise*")
 
-url_to_audio(sys.argv[1])
