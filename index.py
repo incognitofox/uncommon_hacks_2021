@@ -11,8 +11,8 @@ def index():
 @app.route('/rr_check', methods=["POST"])
 def rr_check():
     url = request.form['url']
-    id_rr = audd_test.url_to_audio(url)
-    if id_rr:
+    is_rr = audd_test.url_to_audio(url)
+    if is_rr:
         return render_template('index.html', text='You would have been Rick Rolled. It\'s OK. We saved you. You\'re welcome.')
     else:
         return render_template('index.html', text='You lucked out this time.')
