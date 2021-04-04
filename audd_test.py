@@ -34,6 +34,9 @@ def get_audio_info(directory, file = False, url = False):
 #    print("artist: " + str(tmp["result"]["artist"]))
    
 def url_to_audio (url):
+    if "youtube" not in url:
+        print ("This is not a youtube video")
+        return
     url_to_mp3(url)
     title, artist = get_audio_info ("noise.mp3.mp3", file = True)
     is_rick = (title == "Never Gonna Give You Up" and artist == "Rick Astley")
